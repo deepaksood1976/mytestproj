@@ -1,0 +1,29 @@
+---
+- hosts: webserver
+  gather_facts: yes
+#  register:
+  sudo: yes
+
+  tasks:
+        - name: Installing Vim
+          yum:
+                name: vim
+                state: present
+
+        - name: Installing nano
+          yum: name=nano state=present
+
+        - name: Installing elinks
+          yum: name=elinks state=present
+
+        - name: Installing git
+          yum: name=git state=present
+
+        - name: Installing wget
+          yum: name=wget state=present
+
+        - name: Installing httpd
+          yum: name=httpd state=absent
+          
+        - name: Installing Nginx
+          yum: name=ngnix state=present
